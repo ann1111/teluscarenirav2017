@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /sitepanel
+Disallow: /assets
+Disallow: /uploaded_files
+Disallow: /users/forgottenpassword
+Disallow: /members
+Disallow: /vendors
+Disallow: /run_cron
+Disallow: /remote
+Disallow: /comments
+Disallow: /weight_unit
+
+Sitemap: http://www.example.com/seo/sitemap.xml 
