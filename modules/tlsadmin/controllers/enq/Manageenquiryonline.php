@@ -18,16 +18,10 @@ class Manageenquiryonline extends Private_Controller{
 	$data = '';
 			
 			$this->load->view('theme/header',$data);
-
 			//$this->load->view('theme/sidebar');
-
 			$this->load->view('enq/searchservices',$data);
-
 			$this->load->view('theme/footer');
-
-	
-	
-	
+			
 	}
 	
 	public function postrequestquote(){

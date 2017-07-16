@@ -2,21 +2,21 @@
 
 class Manageenquiryonline_model extends MY_Model {
 
-
 /*
    Dev : Nirav 
    Function : Book Quote
 */
 
 function getbookedquote($usrid){
+
  if($this->session->userdata('usertype') != '2'){
  
-	$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_user_id = '".$usrid."' and mq.mq_state_of_quote = 'B' ORDER BY mq.mq_last_updates DESC");
+	$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname, custu.first_name as firstname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_user_id = '".$usrid."' and mq.mq_state_of_quote = 'B' ORDER BY mq.mq_last_updates DESC");
 	
  }
  else
  {
-	 $bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id  WHERE mq.mq_vendor_id = '".$usrid."' and mq.mq_state_of_quote = 'B' ORDER BY mq.mq_last_updates DESC");
+	 $bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname, custu.first_name as firstname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id  WHERE mq.mq_vendor_id = '".$usrid."' and mq.mq_state_of_quote = 'B' ORDER BY mq.mq_last_updates DESC");
  }
   return $bqqty->result_array();
   
@@ -34,11 +34,14 @@ function getsavedquote($usrid){
 
 	if($this->session->userdata('usertype') != '2'){
 				
-		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_user_id = '".$usrid."' and mq.mq_state_of_quote = 'S' ORDER BY mq.mq_last_updates DESC");
+		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname, custu.first_name as firstname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_user_id = '".$usrid."' and mq.mq_state_of_quote = 'S' ORDER BY mq.mq_last_updates DESC");
+		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname, custu.first_name as firstname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_user_id = '".$usrid."' and mq.mq_state_of_quote = 'S' ORDER BY mq.mq_last_updates DESC");
+		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname, custu.first_name as firstname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_user_id = '".$usrid."' and mq.mq_state_of_quote = 'S' ORDER BY mq.mq_last_updates DESC");
+		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname, custu.first_name as firstname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_user_id = '".$usrid."' and mq.mq_state_of_quote = 'S' ORDER BY mq.mq_last_updates DESC");
 	}
 	else{
 		
-		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_vendor_id = '".$usrid."' and mq.mq_state_of_quote = 'S' ORDER BY mq.mq_last_updates DESC");
+		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname, custu.first_name as firstname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_vendor_id = '".$usrid."' and mq.mq_state_of_quote = 'S' ORDER BY mq.mq_last_updates DESC");
 	}
  // print_r($bqqty->result_array()); exit;
   return $bqqty->result_array();
@@ -48,11 +51,11 @@ function getsavedquote($usrid){
 function getbifforquote($usrid){
 	if($this->session->userdata('usertype') != '2'){
 	
-		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_user_id = '".$usrid."' and mq.mq_state_of_quote = 'BD' ORDER BY mq.mq_last_updates DESC");
+		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname, custu.first_name as firstname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_user_id = '".$usrid."' and mq.mq_state_of_quote = 'BD' ORDER BY mq.mq_last_updates DESC");
 	}
 	else{
 		
-		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_vendor_id = '".$usrid."' and mq.mq_state_of_quote = 'BD' ORDER BY mq.mq_last_updates DESC");
+		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname, custu.first_name as firstname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_vendor_id = '".$usrid."' and mq.mq_state_of_quote = 'BD' ORDER BY mq.mq_last_updates DESC");
 	}
  // print_r($bqqty->result_array()); exit;
   return $bqqty->result_array();
@@ -63,10 +66,10 @@ function getbifforquote($usrid){
 function getnegotiatequote($usrid){
 	if($this->session->userdata('usertype') != '2'){
 		
-		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_user_id = '".$usrid."' and mq.mq_state_of_quote = 'N' ORDER BY mq.mq_last_updates DESC");
+		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname, custu.first_name as firstname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_user_id = '".$usrid."' and mq.mq_state_of_quote = 'N' ORDER BY mq.mq_last_updates DESC");
 	} else {
 		
-		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_vendor_id = '".$usrid."' and mq.mq_state_of_quote = 'N' ORDER BY mq.mq_last_updates DESC");
+		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname, custu.first_name as firstname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_vendor_id = '".$usrid."' and mq.mq_state_of_quote = 'N' ORDER BY mq.mq_last_updates DESC");
 	}
  // print_r($bqqty->result_array()); exit;
   return $bqqty->result_array();
@@ -76,10 +79,10 @@ function getnegotiatequote($usrid){
 function getconfirmedquote($usrid){
 	if($this->session->userdata('usertype') != '2'){
 	
-		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_user_id = '".$usrid."' and mq.mq_state_of_quote = 'C' ORDER BY mq.mq_last_updates DESC");
+		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname, custu.first_name as firstname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_user_id = '".$usrid."' and mq.mq_state_of_quote = 'C' ORDER BY mq.mq_last_updates DESC");
 	} else {
 	
-		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_vendor_id = '".$usrid."' and mq.mq_state_of_quote = 'C' ORDER BY mq.mq_last_updates DESC");
+		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname, custu.first_name as firstname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_vendor_id = '".$usrid."' and mq.mq_state_of_quote = 'C' ORDER BY mq.mq_last_updates DESC");
 	}
  // print_r($bqqty->result_array()); exit;
   return $bqqty->result_array();
@@ -90,10 +93,10 @@ function requastaquote($usrid){
 
 	if($this->session->userdata('usertype') != '2'){
 	
-		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_user_id = '".$usrid."'  ORDER BY mq.mq_last_updates DESC");
+		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname, custu.first_name as firstname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_user_id = '".$usrid."'  ORDER BY mq.mq_last_updates DESC");
 	} else {
 	
-		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_vendor_id = '".$usrid."'  ORDER BY mq.mq_last_updates DESC");
+		$bqqty = $this->db->query("select mq.*,cust.user_name,custu.user_name as custname, custu.first_name as firstname from manage_quote mq LEFT JOIN wl_customers cust ON mq.mq_vendor_id = cust.customers_id LEFT JOIN  wl_customers custu ON mq.mq_user_id = custu.customers_id WHERE mq.mq_vendor_id = '".$usrid."'  ORDER BY mq.mq_last_updates DESC");
 	}
 	
  // print_r($bqqty->result_array()); exit;
