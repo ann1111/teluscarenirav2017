@@ -43,6 +43,8 @@
 
 $route['sitepanel/(:any)']		= "sitepanel/$1";
 $route['tlsadmin']		= "tlsadmin/login";
+$route['consumer-dashboard']		= "tlsadmin/login";
+$route['seller-dashboard']		= "tlsadmin/login";
 
 $route['members/quotes/(complaint|suggestion|queries)/(:num)'] = 'members/quotes/feedback';
 

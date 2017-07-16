@@ -62,10 +62,12 @@ $country_res              =  $this->product_model->get_products($condtion_array)
 					<a class="page-scroll" data-toggle="modal" title="Login" href="#loginModal"><span style="font-size:21px;" class="ion-locked"></span>  Login</a>    <!-- ion-unlocked -->
 				</div>
 			<?php }else{ if($this->session->userdata('userType')==1){
-					$base_url = base_url().'members/myaccount'; 
-					$acc_link = "<a href='#'>Start Selling !</a>&nbsp;&nbsp;&nbsp; Welcome  <a href=".$base_url." >".strtoupper($this->session->userdata('first_name'))."</a>";
+					//$base_url = base_url().'members/myaccount';
+					$base_url = base_url().'consumer-dashboard';					
+					$acc_link = "<a href=".$base_url." >".strtoupper($this->session->userdata('first_name'))."</a>";
 				}else{
-					$base_url = base_url().'vendors/myaccount'; 
+					//$base_url = base_url().'vendors/myaccount'; 
+					$base_url = base_url().'seller-dashboard';  
 					$acc_link = "<a href=".$base_url." >".strtoupper($this->session->userdata('first_name'))."</a>";
 				}
 			 ?>
@@ -95,17 +97,19 @@ $country_res              =  $this->product_model->get_products($condtion_array)
 			</div>
 			<div class="col-xs-8 mobile_nav_tt" >
 				<div class="" style="text-align:left;">
-					<span style="font-size:18px;margin-right:5px;" class="ion-social-whatsapp"></span> <span> <small>UAE</small> +971 52cxcxcxc 2188 228</span>
+					<span style="font-size:18px;margin-right:5px;" class="ion-social-whatsapp"></span> <span> <small>UAE</small> +971 52 2188 228</span>
 				</div>
 				<?php if( !$this->auth->is_user_logged_in() ) { ?>
 				<div class="">
 					<a class="page-scroll" data-toggle="modal" title="Login" href="#loginModal"><span style="font-size:18px;" class="ion-locked"></span>  Login</a>    <!-- ion-unlocked -->
 				</div>
 			<?php }else{ if($this->session->userdata('userType')==1){
-					$base_url = base_url().'members/myaccount'; 
+					//$base_url = base_url().'members/myaccount';
+					$base_url = base_url().'consumer-dashboard';					
 					$acc_link = "<a href=".$base_url." >".strtoupper($this->session->userdata('first_name'))."</a>";
 				}else{
-					$base_url = base_url().'vendors/myaccount'; 
+					//$base_url = base_url().'vendors/myaccount'; 
+					$base_url = base_url().'seller-dashboard';  
 					$acc_link = "<a href=".$base_url." >".strtoupper($this->session->userdata('first_name'))."</a>";
 				}
 			 ?>

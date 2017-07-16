@@ -31,7 +31,8 @@ $button1='Update';
                         </div>
                         
                         <div class="row">
-							<?php //print_r($quote); ?>
+							<?php //print_r($quote);  
+							print_r($this->session->userdata);?>
 							<div class="col-lg-12">							
 								<div class="card-box">
 								

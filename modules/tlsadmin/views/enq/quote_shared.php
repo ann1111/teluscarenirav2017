@@ -17,7 +17,7 @@
 							</div>
 						</div>
 
-                        <?php print_r($saving_data); ?>
+                        <?php //print_r($saving_data); ?>
 						<div class="row">
                             <div>
                                 <div class="card-box" style="overflow-x: scroll;">
@@ -92,7 +92,7 @@
 											<td><?php echo $bdata['mq_id']; ?></td>
 											<td><?php echo  $bdata['mq_post_date']	; ?></td>
 											<td><?php echo  ($bdata['mq_kind_of_request'] == '1')?'Customer':'Vendor'; ?></td>
-											<td><?php echo $bdata['mq_request_from']; ?></td>
+											<td><?php echo $bdata['custname']; ?></td>
 											<td><?php echo $bdata['user_name']; ?></td>
 											<td><?php echo $bdata['mq_quote_via'].'Front End'; ?></td>
 											<td><?php echo $stateofquote; ?></td>
