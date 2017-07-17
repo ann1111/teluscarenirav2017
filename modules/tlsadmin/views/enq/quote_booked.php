@@ -36,7 +36,7 @@
 													<th>Kind of subproduct</th>
 													<th>status of order</th>
 													<th>Quote proof attachment</th>
-													<th style="padding-right: 56px;">Total</th>			
+													<th style="padding-right: 56px;">Total  </th>			
 													<th>Action/Appointment</th>
 													<th>Feedback by admin/Remark</th>																									
                                                 </tr>
