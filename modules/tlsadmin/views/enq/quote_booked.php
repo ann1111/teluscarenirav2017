@@ -93,8 +93,8 @@
 											<td><?php echo $bdata['mq_id']; ?></td>
 											<td><?php echo $bdata['mq_post_date']	; ?></td>
 											<td><?php echo ($bdata['mq_kind_of_request'] == '1')?'Customer':'Vendor'; ?></td>
-											<td><?php echo $bdata['firstname'] .': '.$bdata['custname']; ?></td>
-											<td><?php echo $bdata['user_name']; ?></td>
+											<td><?php echo '<b>'.$bdata['firstname'] .'</b>: '.$bdata['custname']; ?></td>
+											<td><?php echo '<b>'.$bdata['vendorfirstname'] .'</b>: '. $bdata['user_name']; ?></td>
 											<td><?php echo $bdata['mq_quote_via'].'Front End'; ?></td>
 											<td><?php echo $stateofquote; ?></td>
 											<td><?php echo $bdata['mq_product']; ?></td>
