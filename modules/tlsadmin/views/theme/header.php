@@ -36,7 +36,15 @@
 	}
 	#topnav .has-submenu.active a {
     color: #000;
-}
+	}
+	@media (min-width: 768px){
+
+	.form-horizontal .control-label {
+		padding-top: 0px;
+		margin-bottom: 0;
+		text-align: right;
+	}
+	}
 	</style>
     </head>
 

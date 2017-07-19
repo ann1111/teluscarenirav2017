@@ -31,8 +31,8 @@ $button1='Update';
                         </div>
                         
                         <div class="row">
-							<?php //print_r($quote);  
-							print_r($this->session->userdata);?>
+							<?php print_r($quote);  
+							//print_r($this->session->userdata);?>
 							<div class="col-lg-12">							
 								<div class="card-box">
 								
@@ -49,14 +49,30 @@ $button1='Update';
 	                                </p>
 	                                <?php //echo $this->uri->segment(3);  ?>
 									<form class="form-horizontal" action="<?php echo base_url().'tlsadmin/enq/Manageenquiryonline/quote_bookededit/'.$this->uri->segment(5); ?>" method="post"  role="form"  data-parsley-validate novalidate >
+									<div class="form-group">
+									 <label for="POSTDATE" class="col-sm-3 control-label">Post Date </label>
+									 <div class="col-sm-7"> <?php echo $quote[0]['mq_post_date']; ?></div>
+									</div>
+									<div class="form-group">
+									 <label for="POSTDATE" class="col-sm-3 control-label">Service Type </label>
+									 <div class="col-sm-7"> <?php echo $quote[0]['mq_product']; ?></div>
+									</div>
+									<div class="form-group">
+									 <label for="POSTDATE" class="col-sm-3 control-label">Total Quote </label>
+									 <div class="col-sm-7"> <?php echo $quote[0]['mq_total_quote']; ?> AED</div>
+									</div>
 									
-										  <div class="form-group">
+									
+									<div class="form-group">
                                        <label for="HP3" class="col-sm-3 control-label">Feedback</label>
                                        <div class="col-sm-7">
 						<textarea   class="form-control" id="Remarks" name="Remarks" placeholder="Feedback/Remarks "><?php echo $Feedback; ?></textarea>
-											</div>
-                                        </div>
-									<div class="form-group">
+									   <input type="hidden" name="mq_id" value="<?php echo $quote[0]['mq_id']; ?>" />
+									   <input type="hidden" name="mq_vendor_id" value="<?php echo $quote[0]['mq_vendor_id']; ?>" />
+									   <input type="hidden" name="mq_user_id" value="<?php echo $quote[0]['mq_user_id']; ?>" />
+									   </div>
+                                    </div>
+									<!--div class="form-group">
 									<label for="ActiveStatus"class="col-sm-3 control-label">Status of Order*</label>
 									<div class="col-sm-7">
 										<select required  class="form-control" id="StatusofOrder" name="StatusofOrder">
@@ -67,7 +83,7 @@ $button1='Update';
 											<option value="2" <?php if($StatusofOrder=='2'){echo "selected";} ?>>Cancle</option>
 										</select>
 									</div>
-									</div>
+									</div-->
 											<div class="form-group">
 									<label for="ActiveStatus"class="col-sm-3 control-label">State of Quote*</label>
 									<div class="col-sm-7">
