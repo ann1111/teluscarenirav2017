@@ -61,6 +61,10 @@ $button1='Update';
 									 <label for="POSTDATE" class="col-sm-3 control-label">Total Quote </label>
 									 <div class="col-sm-7"> <?php echo $quote[0]['mq_total_quote']; ?> AED</div>
 									</div>
+									<div class="form-group">
+									 <label for="POSTDATE" class="col-sm-3 control-label">Last Updates </label>
+									 <div class="col-sm-7"> <?php echo $quote[0]['mq_last_updates']; ?></div>
+									</div>
 									
 									
 									<div class="form-group">
@@ -72,19 +76,8 @@ $button1='Update';
 									   <input type="hidden" name="mq_user_id" value="<?php echo $quote[0]['mq_user_id']; ?>" />
 									   </div>
                                     </div>
-									<!--div class="form-group">
-									<label for="ActiveStatus"class="col-sm-3 control-label">Status of Order*</label>
-									<div class="col-sm-7">
-										<select required  class="form-control" id="StatusofOrder" name="StatusofOrder">
-											<option value="" <?php if($StatusofOrder==''){echo "selected";} ?>>Select Status Order</option>
-											<option value="4" <?php if($StatusofOrder=='4'){echo "selected";} ?>>Pending</option>
-											<option value="1" <?php if($StatusofOrder=='1'){echo "selected";} ?>>Complete</option>
-											<option value="3" <?php if($StatusofOrder=='3'){echo "selected";} ?>>Change/Postpone</option>
-											<option value="2" <?php if($StatusofOrder=='2'){echo "selected";} ?>>Cancle</option>
-										</select>
-									</div>
-									</div-->
-											<div class="form-group">
+							
+								<div class="form-group">
 									<label for="ActiveStatus"class="col-sm-3 control-label">State of Quote*</label>
 									<div class="col-sm-7">
 										<select required  class="form-control" id="StatusofQuote" name="StatusofQuote">
