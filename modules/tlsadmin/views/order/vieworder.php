@@ -25,47 +25,37 @@
                                     <table id="datatable" class="table table-striped table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th>No.</th>
-													<th>Vender/Seller/Company</th>
-                                                    <th>Type of service</th>                                                 
-													<th>Policy Status</th>
-													<th>Order Status</th>												
-													<th>Policy Doc</th>
-													
+													<th>No.</th>
+													<th>Order To</th>
+                                                    <th>Order From </th>                                                 
+													<th>Service	</th>
+													<th>Quote ID</th>												
+													<th>Order Status</th>
+													<th>Order Date</th>
                                                 </tr>
                                             </thead>
 
 
                                             <tbody>
 											<?php 
+											
+											//print_r($vieworders);
 											$i=1;
-											/*foreach($employee_list as $e) { ?>
-                                                <tr>
-												   <td><?php echo $i;?></td>
-                                                    <td><?php foreach($company_list as $company){
-
-										echo ($e->CompanyCode == $company->SID)?$company->CompanyName:''; 
-
-										} ?><?php echo $e->CompanyCode;?></td>
-                                                    <td><?php echo $e->EmployeeFirstName." ".$e->EmployeeLastName;?></td>
-                                                    <!--<td><?php echo date('d-m-Y',strtotime($e->DateOfBirth));?></td>
-                                                    <td><?php echo $e->DesignationID;?></td>
-                                                    <td><?php echo date('d-m-Y',strtotime($e->DateOfJoin));?></td>
-                                                    <td><?php echo $e->BasicSalary;?></td>-->
-													 <td><?php echo $e->HP1;?><?php echo ($e->HP2 == true)?'/'.$e->HP2:'';?><?php echo ($e->HP3 == true)?'/'.$e->HP3:'';?></td>
-													   <td><?php echo $e->PermanentAddress;?></td>
-													    <!--<td><?php echo $e->HomePhone1;?></td>
-														 <td><?php echo $e->HomePhone2;?></td>
-														   <td><?php echo $e->PermanentAddress;?></td>
-														 <td><?php echo $e->CommunicationAddress;?></td>-->
-														  <td align="center"><?php echo ($e->ActiveStatus == '1')?'Yes':'No';?></td>
-													<td style="font-size:16px;text-align: center;"><a href="<?php echo base_url().'index.php/Employee/edit/'.$e->SID ?>"><i class="fa fa-edit"></i></a>&nbsp;<a href="<?php echo base_url().'index.php/Employee/employee_delete/'.$e->SID ?>"><i class="fa fa-trash
-													"></i></a></td>
-													
-                                                </tr>
-												<?php
-												$i++;
-											}*/
+											foreach($vieworders as $vorder){ ?>
+											
+											 <tr>
+										   <td><?php echo $vorder['id'];?></td>
+											 <td><?php echo $vorder['vendor_id'];?></td>
+											  <td><?php echo $vorder['user_id'];?></td>
+											   <td><?php echo $vorder['service_name'];?></td>
+											    <td><a href="<?php echo base_url().'tlsadmin/enq/Manageenquiryonline/quote_bookededit/'.$vorder['manage_quote_id']; ?>"><?php echo $vorder['manage_quote_id'];?></a></td>
+												 <td><?php echo $vorder['order_status'];?></td>
+												  <td><?php echo $vorder['date_added'];?></td>
+											
+											</tr>
+											
+										<?php 	}
+								
 												?>
                                                 </tbody>
                                         </table>

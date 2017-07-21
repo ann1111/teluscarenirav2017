@@ -23,15 +23,14 @@ function getbookedquote($usrid){
 }
 
 function updatebookquote($editquote){
-/*
+
 if($this->input->post('StatusofQuote') == 'C'){
 
- $this->db->query("INSERT INTO `tu_orders`(`vendor_id`, `user_id`, `service_name`, `manage_quote_id`, `vendor_order_id`, `type_of_service`, `policy_status`, `order_status`, `policy_doc`, `date_added`) VALUES ([value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10],[value-11]) ");
+$this->db->query("INSERT INTO `tu_orders`(`vendor_id`, `user_id`, `service_name`, `manage_quote_id`,order_status) VALUES ('".$this->input->post('mq_vendor_id')."','".$this->input->post('mq_user_id')."','".$this->input->post('service_type')."','".$this->input->post('mq_id')."',4)");
  
-
 } 
-*/
-$bqqty =  $this->db->query("UPDATE manage_quote SET mq_feedback = '".$this->input->post('Remarks')."' manage_quote_id = '".$this->input->post('Remarks')."',mq_state_of_quote = '".$this->input->post('StatusofQuote')."'  WHERE mq_id = '".$editquote."' ");
+
+$bqqty =  $this->db->query("UPDATE manage_quote SET mq_feedback = '".$this->input->post('Remarks')."',mq_state_of_quote = '".$this->input->post('StatusofQuote')."'  WHERE mq_id = '".$editquote."' ");
   return true;
   
 }

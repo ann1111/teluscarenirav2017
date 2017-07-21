@@ -15,18 +15,14 @@ class Orderhistory extends CI_Controller {
 	
 	public function  vieworder(){
 	
-	$data = '';
+		$usrid = $this->session->userdata('user_id');
+		
+		$data['vieworders'] = $this->Order_history_model->getvieworders($usrid); 
 	
-			$this->load->view('theme/header',$data);
+		$this->load->view('theme/header',$data);
+		$this->load->view('order/vieworder',$data);
+		$this->load->view('theme/footer');
 
-			//$this->load->view('theme/sidebar');
-
-			$this->load->view('order/vieworder',$data);
-
-			$this->load->view('theme/footer');
-
-	
-	
 	
 	}
 	

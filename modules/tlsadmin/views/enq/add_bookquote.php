@@ -31,7 +31,7 @@ $button1='Update';
                         </div>
                         
                         <div class="row">
-							<?php print_r($quote);  
+							<?php //print_r($quote);  
 							//print_r($this->session->userdata);?>
 							<div class="col-lg-12">							
 								<div class="card-box">
@@ -56,6 +56,7 @@ $button1='Update';
 									<div class="form-group">
 									 <label for="POSTDATE" class="col-sm-3 control-label">Service Type </label>
 									 <div class="col-sm-7"> <?php echo $quote[0]['mq_product']; ?></div>
+									  <input type="hidden" name="service_type" value="<?php echo $quote[0]['mq_product']; ?>" />
 									</div>
 									<div class="form-group">
 									 <label for="POSTDATE" class="col-sm-3 control-label">Total Quote </label>
